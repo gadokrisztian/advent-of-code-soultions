@@ -68,4 +68,4 @@ if __name__ == "__main__":
             for programming_language in filter(Path.is_dir, problem_path.iterdir()):
                 dst = programming_language.joinpath("input.txt")
                 if not dst.exists():
-                    input_path.hardlink_to(dst)
+                    dst.hardlink_to(input_path)
